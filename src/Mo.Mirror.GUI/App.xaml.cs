@@ -1,3 +1,6 @@
+﻿using Mo.Mirror.GUI.Clock;
+using Mo.Mirror.GUI.Clock.Controllers;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -48,6 +51,10 @@ namespace Mo.Mirror.GUI
                 this.DebugSettings.EnableFrameRateCounter = true;
             }
 #endif
+
+            var clockModel = new ClockModel();
+            clockModel.Update();
+            (Resources["clockViewModel"] as ClockViewModel).Initialize(clockModel);
 
             Frame rootFrame = Window.Current.Content as Frame;
 
