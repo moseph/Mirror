@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mo.Mirror.GUI
 {
-    abstract class BaseModel
+    abstract class BaseModel : PropertyChangedBase
     {
         public abstract TimeSpan Inteval { get; }
 

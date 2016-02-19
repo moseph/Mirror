@@ -10,7 +10,21 @@ namespace Mo.Mirror.GUI.Clock
     {
         DateTime currentTime;
 
-        public DateTime CurrentTime { get; set; }
+        public DateTime CurrentTime
+        {
+            get
+            {
+                return currentTime;
+            }
+            set
+            {
+                if (currentTime != value)
+                {
+                    currentTime = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
 
         public override TimeSpan Inteval => TimeSpan.FromSeconds(1);
 
