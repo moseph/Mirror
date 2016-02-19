@@ -27,6 +27,23 @@ namespace Mo.Mirror.GUI.Clock
             }
         }
 
+        private string currentDate;
+        public string CurrentDate
+        {
+            get
+            {
+                return currentDate;
+            }
+            set
+            {
+                if (currentDate != value)
+                {
+                    currentDate = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
         internal void Initialize(ClockModel model)
         {
             this.model = model;
@@ -45,6 +62,7 @@ namespace Mo.Mirror.GUI.Clock
         private void updateTime()
         {
             CurrentTime = model.CurrentTime.ToString("hh:mm:ss tt");
+            CurrentDate = model.CurrentTime.ToString("d MMMM yyyy");
         }
     }
 }
