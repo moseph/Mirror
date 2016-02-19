@@ -12,5 +12,12 @@ namespace Mo.Mirror.GUI.Clock
 
         public DateTime CurrentTime { get; set; }
 
+        public override TimeSpan Inteval => TimeSpan.FromSeconds(1);
+
+        public override void Update()
+        {
+            CurrentTime = DateTime.Now;
+        }
+
     }
 }
